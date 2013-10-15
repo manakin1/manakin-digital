@@ -8,10 +8,9 @@
 
 	<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	<link href="css/flexslider.css" type="text/css" rel="stylesheet"/>
 
 	<script data-main="js/main" src="js/lib/require/require.min.js" ></script>
-
-	<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js" ></script>
 
 </head>
 
@@ -105,23 +104,23 @@
 						<h2>Summary</h2>
 
 						<ul>
-							<li>Skilled and versatile Interactive Web Developer with over 10 years of professional experience</li>
+							<li>Skilled and versatile Interactive / Web Developer with over 10 years of professional experience</li>
 							<li>Highly motivated, resourceful and a quick learner with a passion for new technologies</li>
 							<li>Well versed in OOP, design patterns and best practices</li>
 							<li>Expert level knowledge of Flash, Flex & AIR and MVC frameworks</li>
 							<li>Experience in building both native and hybrid Android and iOS apps</li>
 							<li>A good understanding of back-end technologies and a desire to learn more</li>
 							<li>Background in interface design and a good visual eye</li>
-							<li>Previously focused on Flash/Flex/AIR technologies, now very keen on complex Web applications, gamification and back-end development</li>
+							<li>Previously focused on Flash/Flex/AIR technologies, now very keen on JavaScript frameworks, gamification and back-end development</li>
 						</ul>
 
 						<h4>Technologies</h4>
-						<p>Flash, Flex, AIR, ActionScript, HTML5, CSS3,  JavaScript, PHP, MySQL, MongoDB, C#, Java, Objective-C</p>
+						<p>HTML5, CSS3, JavaScript, PHP, MySQL, MongoDB, C#, Java, Objective-C, Flash, Flex, AIR, ActionScript</p>
 						<h4>Frameworks</h4>
-						<p>jQuery, jQuery Mobile, Foundation, Bootstrap, Backbone.js, Knockout.js, Angular.js, Require.js, node.js</p>
+						<p>jQuery, jQuery Mobile, Foundation, Bootstrap, Backbone.js, Knockout.js, AngularJS, RequireJS, node.js</p>
 
 						<h2>Professional Experience</h2>
-						<p><strong>January 2013 to present</strong> - Senior Web / Interactive Developer at <a href="http://ghosydney.com" target="_blank">GHO Sydney</a>, Sydney, Australia<br/>
+						<p><strong>January 2013 to present</strong> - Senior Interactive / Web Developer at <a href="http://ghosydney.com" target="_blank">GHO Sydney</a>, Sydney, Australia<br/>
 						<strong>June 2011 to January 2013</strong> - Senior Interactive Developer at <a href="http://visualjazz.com.au" target="_blank">Visual Jazz Isobar</a>, Sydney, Australia<br/>
 						<strong>March 2011 to May 2011</strong> - Freelance Interactive Developer at <a href="http://yeahpoint.com" target="_blank">Yeahpoint</a>, Sydney, Australia<br/>
 						<strong>October 2010 to February 2011</strong> - Freelance Developer at various companies, London, UK<br/>
@@ -139,7 +138,7 @@
 						<br/>
 						<a href="http://github.com/manakin1" target="_blank">GitHub</a><br/>
 						<a href="au.linkedin.com/pub/eve-andersson/3/694/861/" target="_blank">My LinkedIn profile</a><br/>
-						<a class="download" href="files/cv_EveAndersson.pdf">Download full CV as PDF</a>
+						<!--<a class="download" href="files/cv_EveAndersson.pdf">Download full CV as PDF</a>-->
 					</div>
 				</div>
 			</li>
@@ -181,6 +180,9 @@
 
 </div>
 <!-- end wrapper -->
+
+    <script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="js/lib/flexslider/jquery.flexslider-min.js" ></script>
 
 	<script type="text/template" id="portfolio-template">
 
@@ -235,44 +237,25 @@
 
 					<div class="content-images col-lg-8 col-md-8 col-sm-8 col-cs-12">
 
-						<div id="portfolio-carousel" class="carousel slide">
+						<div id="portfolio-carousel" class="carousel slide flexslider">
 
 						  <% var imgs = images.split( ',' ) ; %>
-					
-						  <ol class="carousel-indicators">
 
-							<% var counter = 0 ;
-							    _.each( imgs, function( image ) { 
-									var cl = ( counter == 0 ) ? 'active' : '' ;
-							 		%> 
-							 			<li data-target="#portfolio-carousel" data-slide-to="<%= counter %>" class="<%= cl %>"></li> 
-							 		<%
-							 		counter++ ;
-	            				} )  ;%> 
 
-						  </ol>
-
-						  <div class="carousel-inner">
-
-						 	<% var counter = 0 ;
+							  <ul class="slides">
+							    <% var counter = 0 ;
 						 	 	_.each( imgs, function( image ) { 
 						 	 		var cl = ( counter == 0 ) ? 'active' : '' ;
 						 			%> 
-							 			<div class="item <%= cl %>">
+							 			<li class="item <%= cl %>">
 							 				<img src="<%= image_path %><%= _.escape( image ) %>" alt="Carousel item" />
-	            						</div>
+	            						</li>
             						<% 
             						counter++ ;
             					} ) ; %> 
+							  </ul>
 
-						  </div>
-
-						  <a class="left carousel-control" href="#portfolio-carousel" data-slide="prev">
-						    <span class="icon-prev"></span>
-						  </a>
-						  <a class="right carousel-control" href="#portfolio-carousel" data-slide="next">
-						    <span class="icon-next"></span>
-						  </a>
+					
 						</div>
 
 					</div>

@@ -8,16 +8,16 @@ var application_root = __dirname,
 	itemData = require( './public/js/items.json' ) ;
 
 
-http.createServer( function ( req, res ) {
-    res.writeHead( 200, {'Content-Type': 'text/plain'} ) ;
-} ).listen( 8080 ) ; 
+
 
 // create server
 
-var app = express.createServer( ) ;
+var app = express( ) ;
 
 // configure server
+
 app.configure( function( ) { 
+	app.set( 'port', process.env.PORT || 4711 ) ;
 	app.use( express.bodyParser( ) ) ;
 	app.use( express.methodOverride( ) ) ;
 	app.use( app.router ) ;
@@ -27,23 +27,30 @@ app.configure( function( ) {
 
 // start server
 
-
+/*
+http.createServer( function ( req, res ) {
+    res.writeHead( 200, {'Content-Type': 'text/plain'} ) ;
+} ).listen( 8080 ) ; 
 
 app.listen( 8080, function( ) { 
-	console.log( 'Express server listening on port %d', app.address( ).port ) ;
+	
 } ) ;
+*/
 
+http.createServer( app ).listen( app.get( 'port' ), function( ) {
+  console.log( "Express server listening on port " + app.get( 'port' ) ) ;
+} ) ;
 
 
 // routes
 
 app.get( '/api', function( req, res ) {
-	res.send( 'manakin API is running' ) ;
+	//res.send( 'manakin API is running' ) ;
 } ) ;
 
 // connect to database
 
-mongoose.connect( 'mongodb://localhost/manakin_db' ) ;
+mongoose.connect( 'mongodb://nodejitsu_manakin:1cifhuq5uklaank9gt4niqj4pa@ds045998.mongolab.com:45998/nodejitsu_manakin_nodejitsudb844442590' ) ;
 
 
 // schemas

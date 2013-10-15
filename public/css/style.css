@@ -1,7 +1,7 @@
 /* DEFAULTS */
 
 html { height: auto; width: 100%; }
-body { height: 100%; width: 100%; background: url(../images/bg.jpg) #666 repeat-x ;
+body { height: 100%; width: 100%; background: url(../images/bg.jpg) #818181 repeat-x ;
 	   font-family: 'Arial', 'Helvetica', Helvetica, sans-serif ; color: #333; margin: 0; font-size: 12px; }
 
 p, h2, h3, h4 { color: #333; margin: 0; }

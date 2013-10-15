@@ -24,6 +24,10 @@ define( [ 'jquery', 'underscore', 'backbone' ],
 
             this.$( 'overlay' ).css( { 'height' : $( document ).height( ) + 'px' } ) ;
             this.$el.fadeIn( this.transitionSpeed ) ;
+
+            this.$el.find( '.flexslider' ).flexslider( {
+                animation: "slide"
+            } ) ;
          
             return this ;
         },

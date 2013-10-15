@@ -1,10 +1,11 @@
 {
   "name": "manakin-digital",
-  "version": "0.0.1-4",
+  "version": "0.0.1-13",
   "dependencies": {
     "express": "3.1.x",
-    "mongodb": ">=0.9.9",
-    "mongoose": ">= 2.3.1"
+    "mongodb": "*",
+    "connect": "*",
+    "mongoose": "*"
   },
   "bundledDependencies": [
     "express",

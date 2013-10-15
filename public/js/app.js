@@ -1,6 +1,6 @@
-define( [ 'jquery', 'underscore', 'backbone', 'bootstrap', 'app/views/maincontentview', 'app/views/teaserlistview', 'app/collections/portfolio', 
+define( [ 'jquery', 'underscore', 'backbone', 'bootstrap', 'flexslider', 'app/views/maincontentview', 'app/views/teaserlistview', 'app/collections/portfolio', 
           'app/views/portfolioview', 'app/views/navview', 'app/views/detailedview', 'app/views/categoryfilterview', 'routers/router' ], 
-    function( $, _, Backbone, Bootstrap, MainContentView, TeaserListView, Portfolio, PortfolioView, NavView, DetailedView, CategoryFilterView, MainRouter ) { 
+    function( $, _, Backbone, Bootstrap, FlexSlider, MainContentView, TeaserListView, Portfolio, PortfolioView, NavView, DetailedView, CategoryFilterView, MainRouter ) { 
 
 
     var App = {
@@ -41,6 +41,7 @@ define( [ 'jquery', 'underscore', 'backbone', 'bootstrap', 'app/views/mainconten
             var view = window.location.hash.replace( '#', '' ) ;
             
             if( !view ) this.mainView.switchView( 'home', false ) ;
+
 
         }
 

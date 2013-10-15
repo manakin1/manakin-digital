@@ -19,11 +19,12 @@ define( [ 'jquery', 'underscore', 'backbone', 'app/collections/portfolio', 'app/
 
         	// render the first three items
 
-			_.each( this.collection.models, function( item ) {
-				if( count >= that.maxItems ) return ;
-				that.renderItem( item ) ;
-				count++ ;
-			}, this ) ;
+            var len = this.collection.length ;
+
+            for( var i = len - 1 ; i >= len - that.maxItems ; i-- ) {
+                var item = this.collection.get( { 'id' : i } ) ;
+                that.renderItem( item ) ;
+            }
 
             return this ;
         },
